@@ -1,0 +1,12 @@
+%packages
+-@kde-media
+-@kde-office
+-akregator
+-falkon
+-k3b
+-kaddressbook
+-kmail
+-kontact
+-korganizer
+-krfb
+%end

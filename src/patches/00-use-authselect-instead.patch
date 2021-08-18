@@ -1,0 +1,4 @@
+16c16
+< auth --useshadow --passalgo=sha512
+---
+> authselect sssd
