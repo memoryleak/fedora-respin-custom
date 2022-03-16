@@ -1,32 +1,11 @@
 %packages
-# Ansible
-ansible
-ansible-lint
-python3-docker
-python3-libguestfs
-python3-molecule
-python3-molecule-docker
-python3-virtualenv
-yamllint
-
-# Data Science & ML
-python3-pandas
-python3-sympy
-python3-numpy
-python3-matplotlib
-python3-scikit-image
-python3-scikit-learn
-
-# OCR
-tesseract
-tesseract-langpack-deu
-tesseract-langpack-eng
-python3-pyocr
+# Python
+pipenv
 
 # Work
 containerd.io
-docker-ce 
-docker-ce-cli 
+docker-ce
+docker-ce-cli
 docker-compose
 nginx
 npm
@@ -35,7 +14,7 @@ sublime-text
 terraform
 code
 
-# PHP 
+# PHP
 php-PsrLog
 php-bcmath
 php-cli
@@ -76,7 +55,7 @@ java-latest-openjdk-src
 openjfx
 openjfx-devel
 
-# HP Printer 
+# HP Printer
 avahi-devel
 avahi-tools
 cups
@@ -136,18 +115,6 @@ pigz
 
 # Development and general
 @c-development
-
-# Virtualization
-@virtualization
-@guest-agents
-libguestfs-tools
-libvirt-daemon-config-network
-libvirt-daemon-kvm
-python3-libguestfs
-qemu-kvm
-systemd-container
-virt-install
-virt-top
 
 # Codecs
 gstreamer1-plugin-openh264

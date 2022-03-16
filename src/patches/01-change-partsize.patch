@@ -1,5 +1,9 @@
-50,51c50
+48,49c48
 < part / --fstype="ext4" --size=5120
-< part / --size=6500
+< part / --size=7200
 ---
 > part / --size=32768
+488c487
+< cat <<EOF > /etc/profile.d/ps1.sh 
+---
+> cat <<EOF > /etc/profile.d/ps1.sh

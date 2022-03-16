@@ -1,5 +1,5 @@
 BUILD_PROJECT=Fedora
-BUILD_VERSION=34
+BUILD_VERSION=35
 BUILD_VARIANT=KDE
 BUILD_ARCH=x86_64
 BUILD_OUTPUT_DIR=build
@@ -27,11 +27,12 @@ iso:
 		--volid $(BUILD_PROJECT)-$(BUILD_VERSION)-$(BUILD_VARIANT)-Live
 
 boot-iso:
-	wget -nc -q $(BUILD_BOOT_ISO) -O boot.iso
+	# wget -nc -q $(BUILD_BOOT_ISO) -O boot.iso
+	aria2c -x10 -j10 $(BUILD_BOOT_ISO) -o boot.iso
 
 kickstart:
 	ksflatten -c $(BUILD_SRC_DIR)/$(BUILD_KICKSTART).ks -o $(BUILD_OUTPUT_DIR)/flat-$(BUILD_KICKSTART).ks
-	patch $(BUILD_OUTPUT_DIR)/flat-$(BUILD_KICKSTART).ks $(BUILD_SRC_DIR)/patches/00-use-authselect-instead.patch
+	# patch $(BUILD_OUTPUT_DIR)/flat-$(BUILD_KICKSTART).ks $(BUILD_SRC_DIR)/patches/00-use-authselect-instead.patch
 	patch $(BUILD_OUTPUT_DIR)/flat-$(BUILD_KICKSTART).ks $(BUILD_SRC_DIR)/patches/01-change-partsize.patch
 	ksvalidator $(BUILD_OUTPUT_DIR)/flat-$(BUILD_KICKSTART).ks
 
