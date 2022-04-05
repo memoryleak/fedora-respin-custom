@@ -9,9 +9,11 @@ BUILD_BOOT_ISO=https://mirror.init7.net/fedora/fedora/linux/releases/$(BUILD_VER
 BUILD_NUMBER:=$(shell date +%Y-%m-%d-%H%M%S)
 
 iso:
+	sudo rm -rf $(BUILD_OUTPUT_DIR)/result
 	sudo livemedia-creator  \
+		--vnc vnc=:0 \
 		--make-iso \
-		--iso boot.iso \
+		--iso $(BUILD_OUTPUT_DIR)/boot.iso \
 		--iso-only \
 		--iso-name $(BUILD_PROJECT)-$(BUILD_VERSION)-$(BUILD_VARIANT)-Live-$(BUILD_NUMBER).iso \
 		--ks $(BUILD_OUTPUT_DIR)/flat-$(BUILD_KICKSTART).ks \
@@ -20,15 +22,15 @@ iso:
 		--resultdir $(BUILD_OUTPUT_DIR)/result \
 		--macboot \
 		--fs-label $(BUILD_PROJECT)-$(BUILD_VERSION)-$(BUILD_VARIANT)-Live \
-		--ram 8096 \
-		--vcpus 6 \
+		--ram 2048 \
+		--vcpus 2 \
 		--project $(BUILD_PROJECT)  \
 		--releasever $(BUILD_VERSION)  \
 		--volid $(BUILD_PROJECT)-$(BUILD_VERSION)-$(BUILD_VARIANT)-Live
 
 boot-iso:
 	# wget -nc -q $(BUILD_BOOT_ISO) -O boot.iso
-	aria2c -x10 -j10 $(BUILD_BOOT_ISO) -o boot.iso
+	aria2c -x10 -j10 $(BUILD_BOOT_ISO) -o $(BUILD_OUTPUT_DIR)/boot.iso
 
 kickstart:
 	ksflatten -c $(BUILD_SRC_DIR)/$(BUILD_KICKSTART).ks -o $(BUILD_OUTPUT_DIR)/flat-$(BUILD_KICKSTART).ks

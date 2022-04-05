@@ -13,40 +13,8 @@ packer
 sublime-text
 terraform
 code
-
-# PHP
-php-PsrLog
-php-bcmath
-php-cli
-php-common
-php-composer-xdebug-handler2
-php-enchant
-php-fedora-autoloader
-php-fpm
-php-gd
-php-intl
-php-json
-php-ldap
-php-mbstring
-php-mysqlnd
-php-opcache
-php-pdo
-php-pear
-php-pecl-apcu
-php-pecl-mcrypt
-php-pecl-oauth
-php-pecl-uuid
-php-pecl-xdebug3
-php-pecl-yaml
-php-pecl-zip
-php-pgsql
-php-phpiredis
-php-process
-php-pspell
-php-soap
-php-sodium
-php-xml
-php-xmlrpc
+teams
+microsoft-edge-stable
 
 # Java
 java-latest-openjdk
@@ -134,4 +102,5 @@ gstreamer1-plugins-good-gtk
 gstreamer1-plugins-good-qt
 gstreamer1-plugins-ugly
 gstreamer1-plugins-ugly-free
+
 %end

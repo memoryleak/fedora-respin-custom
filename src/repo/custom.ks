@@ -30,7 +30,7 @@ cat <<EOF > /etc/yum.repos.d/microsoft-teams.repo
 [microsoft-teams]
 name="Microsoft Teams"
 baseurl=https://packages.microsoft.com/yumrepos/ms-teams
-enabled=0
+enabled=1
 gpgcheck=1
 gpgkey=https://packages.microsoft.com/keys/microsoft.asc
 EOF
@@ -48,7 +48,7 @@ cat <<EOF > /etc/yum.repos.d/microsoft-dotnet.repo
 [microsoft-dotnet]
 name="Microsoft .NET"
 baseurl=https://packages.microsoft.com/yumrepos/microsoft-fedora\$releasever-prod/
-enabled=0
+enabled=1
 gpgcheck=1
 gpgkey=https://packages.microsoft.com/keys/microsoft.asc
 EOF
@@ -57,7 +57,7 @@ cat <<EOF > /etc/yum.repos.d/microsoft-edge.repo
 [microsoft-edge]
 name="Microsoft Edge"
 baseurl=https://packages.microsoft.com/yumrepos/edge/
-enabled=0
+enabled=1
 gpgcheck=1
 gpgkey=https://packages.microsoft.com/keys/microsoft.asc
 EOF
